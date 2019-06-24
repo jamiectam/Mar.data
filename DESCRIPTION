@@ -1,0 +1,14 @@
+Package: Mar.data
+Title: Data used by one of more of the Maritimes packages
+Version: 2019.06.21
+Authors@R: c( person("Mike", "McMahon", email="Mike.McMahon@dfo-mpo.gc.ca", role=c("aut", "cre")) )
+Maintainer: Mike McMahon <Mike.McMahon@dfo-mpo.gc.ca>
+Description: This package includes spatial files for the NAFO subunits, a 2min square grid cell mesh covering Canada's EEZ, and a hexagon grid file covering much of the NorthWest Atlantic.
+License: MIT + file LICENSE
+Depends:
+    R (>= 2.10)
+Suggests:
+    sp
+LazyData: true
+URL: https://github.com/Maritimes/Mar.data/
+RoxygenNote: 6.1.1
