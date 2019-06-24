@@ -5,10 +5,14 @@ Authors@R: c( person("Mike", "McMahon", email="Mike.McMahon@dfo-mpo.gc.ca", role
 Maintainer: Mike McMahon <Mike.McMahon@dfo-mpo.gc.ca>
 Description: This package includes spatial files for the NAFO subunits, a 2min square grid cell mesh covering Canada's EEZ, and a hexagon grid file covering much of the NorthWest Atlantic.
 License: MIT + file LICENSE
+Imports:
+    Mar.utils
 Depends:
     R (>= 2.10)
 Suggests:
     sp
+Remotes:
+  Maritimes/Mar.utils
 LazyData: true
 URL: https://github.com/Maritimes/Mar.data/
 RoxygenNote: 6.1.1
