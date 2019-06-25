@@ -5,5 +5,5 @@
 
 .onLoad <- function(libname, pkgname){
   options(stringsAsFactors = FALSE)
-  Mar.utils::updateCheck(gitPkg = 'Maritimes/Mar.data')
+#  Mar.utils::updateCheck(gitPkg = 'Maritimes/Mar.data')
 }
