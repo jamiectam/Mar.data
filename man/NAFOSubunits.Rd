@@ -33,9 +33,4 @@ divisions can be downloaded from https://www.nafo.int/Data/GIS. The subdivisions
 are originally derived from the 1995 Canadian Hydrographic Service Chart 10040 - 
 "Fisheries and Oceans Statistical Chart" - "Gulf of Maine to Strait of Belle Isle".
 }
-\examples{
-if (require("sp")) {
-sp::plot(NAFOSubunits)
-}   
-}
 \keyword{datasets}

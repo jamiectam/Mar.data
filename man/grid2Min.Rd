@@ -20,9 +20,4 @@ and western boundaries follow the Canadian EEZ.  No cells cover the French
 \details{
 if{html}{figure{grid2Min.png}{options:alt="Figure: grid2Min coverage area"}}
 }
-\examples{
-if (require("sp")) {
-sp::plot(grid2Min)
-}
-}
 \keyword{datasets}

@@ -22,9 +22,4 @@ of ~35N 0'. The eastern boundary follows the NAFO divisions boundaries of 6H,
 \details{
 if{html}{figure{hex.png}{options:alt="Figure: hex coverage area"}}
 }
-\examples{
-if (require("sp")) {
-sp::plot(hex)
-}
-}
 \keyword{datasets}
