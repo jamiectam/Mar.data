@@ -24,8 +24,4 @@
 #' polygon.  For some areas, this will have 3 letters (e.g. "4VSB"), but for 
 #' others, it will have only a single letter code (e.g. "6F")}
 #' }
-#' @examples
-#' if (require("sp")) {
-#' sp::plot(NAFOSubunits)
-#'}   
 "NAFOSubunits"

@@ -11,8 +11,4 @@
 #' \describe{
 #' \item{PUID}{polygon identifier}
 #' }
-#' @examples
-#' if (require("sp")) {
-#' sp::plot(grid2Min)
-#' }
 "grid2Min"

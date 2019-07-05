@@ -13,8 +13,4 @@
 #' \describe{
 #' \item{HEXID}{polygon identifier}
 #' }
-#' @examples
-#' if (require("sp")) {
-#' sp::plot(hex)
-#' }
 "hex"
