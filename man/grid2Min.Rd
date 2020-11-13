@@ -4,10 +4,12 @@
 \name{grid2Min}
 \alias{grid2Min}
 \title{grid2Min Metadata}
-\format{SpatialPolygonsDataFrame frame with 1 data column
+\format{
+SpatialPolygonsDataFrame frame with 1 data column
 \describe{
 \item{PUID}{polygon identifier}
-}}
+}
+}
 \usage{
 grid2Min
 }

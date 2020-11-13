@@ -4,10 +4,12 @@
 \name{coast_lores}
 \alias{coast_lores}
 \title{coast_lores Metadata}
-\format{SpatialPolygons object
+\format{
+SpatialPolygons object
 \describe{
 \item{PUID}{polygon identifier}
-}}
+}
+}
 \usage{
 coast_lores
 }

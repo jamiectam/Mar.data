@@ -4,10 +4,12 @@
 \name{hex}
 \alias{hex}
 \title{hex Metadata}
-\format{SpatialPolygonsDataFrame frame with 1 data column
+\format{
+SpatialPolygonsDataFrame frame with 1 data column
 \describe{
 \item{HEXID}{polygon identifier}
-}}
+}
+}
 \usage{
 hex
 }
