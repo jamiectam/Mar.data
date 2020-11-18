@@ -1,6 +1,6 @@
 Package: Mar.data
 Title: Data used by one of more of the Maritimes packages
-Version: 2020.11.13
+Version: 2020.11.18
 Authors@R: c( person("Mike", "McMahon", email="Mike.McMahon@dfo-mpo.gc.ca", role=c("aut", "cre")) )
 Maintainer: Mike McMahon <Mike.McMahon@dfo-mpo.gc.ca>
 Description: This package includes a variety of spatial files, in both sp and sf formats.
@@ -8,7 +8,8 @@ License: MIT + file LICENSE
 Depends:
     R (>= 3.5.0)
 Suggests:
-    sp
+    sp,
+    sf
 LazyData: true
 URL: https://github.com/Maritimes/Mar.data/
 RoxygenNote: 7.1.1
