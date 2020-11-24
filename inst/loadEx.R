@@ -6,6 +6,7 @@ Areas_Halibut_sf <- surveyStrataPolyLL
    rm(list = c('block_sf','StrataAreas','surveyPoly','surveyPolyLL','surveyStrataPoly','surveyStrataPolyLL'))
 #Shapefiles
 NAFOSubunits_sf   <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED.shp")
+    NAFOSubunits_sf$OBJECTID<- NAFOSubunits_sf$Shape_Leng<- NAFOSubunits_sf$Shape_Area<-NULL
 Strata_Mar_sf      <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/Strata/MaritimesRegionEcosystemAssessmentStrata(2014-).shp")
 Strata_Mar_4VSW_sf  <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/Strata/4VsW.shp")
 Areas_Shrimp_sf      <- sf::st_read ("C:/git/Maritimes/Mar.data/data-raw/Science/Shrimp/shrimpBoxesPoly.shp")
@@ -34,6 +35,7 @@ Areas_Halibut_sf <-    convert2poly(Areas_Halibut_sf, out = "sf")
 
 # create sp files
 NAFOSubunits      <- rgdal::readOGR("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED.shp")
+NAFOSubunits@data$OBJECTID <- NAFOSubunits@data$Shape_Leng<- NAFOSubunits@data$Shape_Area <- NULL
 hex_sf <- sf::st_as_sf(hex)
 
 coastline =  maps::map(database = "world", regions = c("Canada", "USA", "France", "Greenland"),
