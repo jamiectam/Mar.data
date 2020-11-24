@@ -13,6 +13,7 @@ Areas_Shrimp_sf      <- sf::st_read ("C:/git/Maritimes/Mar.data/data-raw/Science
     Areas_Shrimp_sf$LAT <- Areas_Shrimp_sf$LON <- Areas_Shrimp_sf$trekMin <- Areas_Shrimp_sf$trekMax <- Areas_Shrimp_sf$cnt <- Areas_Shrimp_sf$BOX_ID <- NULL
 Areas_Scallop_sf     <- sf::st_read ("C:/git/Maritimes/Mar.data/data-raw/Science/Scallop/ScallopSFAs.shp")
     Areas_Scallop_sf$OBJECTID<- Areas_Scallop_sf$Shape_Leng<- Areas_Scallop_sf$Shape_Area<-NULL
+Grids_Lobster_sf <-  sf::st_read ("C:/git/Maritimes/Mar.data/data-raw/Science/Lobster/GridsMMM.shp")
 #Snowcrab dat files were converted to shapefiles via dat2Shp.R
 Areas_Snowcrab_sf <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/Science/Snowcrab/SCAreas.shp")
     Areas_Snowcrab_sf$OBJECTID <-Areas_Snowcrab_sf$Shape_Leng <- Areas_Snowcrab_sf$Shape_Area <- NULL
@@ -22,9 +23,8 @@ Areas_Snowcrab_Slope_sf <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/Scien
 Areas_Surfclam_sf <-     Mar.utils::convert2poly("C:/git/Maritimes/Mar.data/data-raw/Science/Surfclam/newareas.csv", out = "sf")
     colnames(Areas_Surfclam_sf)[colnames(Areas_Surfclam_sf)=="PID"] <- "AREA"
     Areas_Surfclam_sf$ID <- NULL
-Grids_Lobster_sf <-  convert2poly("C:/git/Maritimes/Mar.data/data-raw/Science/Lobster/GridPolys.csv", out = "sf")
-    colnames(Grids_Lobster_sf)[colnames(Grids_Lobster_sf)=="PID"] <- "GRID"
-    Grids_Lobster_sf$ID <- NULL
+# Grids_Lobster_sf <-  convert2poly("C:/git/Maritimes/Mar.data/data-raw/Science/Lobster/GridPolys.csv", out = "sf")
+#     colnames(Grids_Lobster_sf)[colnames(Grids_Lobster_sf)=="PID"] <- "GRID"
 LFAs_sf <-    convert2poly("C:/git/Maritimes/Mar.data/data-raw/Science/Lobster/LFAPolys.csv", out = "sf")
     colnames(LFAs_sf)[colnames(LFAs_sf)=="PID"] <- "LFA"
     LFAs_sf$ID <- NULL
