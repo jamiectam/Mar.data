@@ -1,0 +1,16 @@
+#' @title hex_sf Metadata
+#' @name hex_sf
+#' @description This is a mesh of hexagonal grid cells covering much the Northwest Atlantic.
+#' The individual hexagons each have an area of 0.0011111 decimal degrees2
+#' (the same area as a 2min x 2min square grid cell). The hexes extend into the
+#' coastline somewhat, with a northern boundary of ~61 2', a southern boundary
+#' of ~35N 0'. The eastern boundary follows the NAFO divisions boundaries of 6H,
+#' 3M, 3K, 2G, 2H and 2J.
+#'
+#' if{html}{figure{hex.png}{options:alt="Figure: hex coverage area"}}
+#' @docType data
+#' @format sf object frame with 1 data column
+#' \describe{
+#' \item{HEXID}{polygon identifier}
+#' }
+"hex_sf"
