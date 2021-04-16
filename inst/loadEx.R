@@ -36,6 +36,15 @@ Areas_Halibut_sf <-    convert2poly(Areas_Halibut_sf, out = "sf")
 # create sp files
 NAFOSubunits      <- rgdal::readOGR("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED.shp")
 NAFOSubunits@data$OBJECTID <- NAFOSubunits@data$Shape_Leng<- NAFOSubunits@data$Shape_Area <- NULL
+
+
+NAFOSubunitsLnd      <- rgdal::readOGR("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED20210416a.shp")
+NAFOSubunitsLnd@data$OBJECTID_1 <- NAFOSubunitsLnd@data$Shape_Leng<- NAFOSubunitsLnd@data$Shape_Area <- NULL
+
+NAFOSubunitsLnd_sf   <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED20210416a.shp")
+NAFOSubunitsLnd_sf$OBJECTID<- NAFOSubunitsLnd_sf$Shape_Leng<- NAFOSubunitsLnd_sf$Shape_Area<-NULL
+
+
 hex_sf <- sf::st_as_sf(hex)
 
 coastline =  maps::map(database = "world", regions = c("Canada", "USA", "France", "Greenland"),
@@ -57,6 +66,10 @@ save(Strata_Mar_4VSW_sf,file = "data/Strata_Mar_4VSW_sf.rda")
 save(Strata_Mar_sf,file = "data/Strata_Mar_sf.rda")
 save(NAFOSubunits,file = "data/NAFOSubunits.rda")
 save(NAFOSubunits_sf,file = "data/NAFOSubunits_sf.rda")
+
+save(NAFOSubunitsLnd,file = "data/NAFOSubunitsLnd.rda")
+save(NAFOSubunitsLnd_sf,file = "data/NAFOSubunitsLnd_sf.rda")
+
 save(Areas_Scallop_sf,file = "data/Areas_Scallop_sf.rda")
 save(Areas_Shrimp_sf,file = "data/Areas_Shrimp_sf.rda")
 save(Areas_Snowcrab_sf,file = "data/Areas_Snowcrab_sf.rda")
@@ -73,6 +86,8 @@ usethis::use_data(Strata_Mar_4VSW_sf, overwrite = TRUE)
 usethis::use_data(Strata_Mar_sf, overwrite = TRUE)
 usethis::use_data(NAFOSubunits, overwrite = TRUE)
 usethis::use_data(NAFOSubunits_sf, overwrite = TRUE)
+usethis::use_data(NAFOSubunitsLnd, overwrite = TRUE)
+usethis::use_data(NAFOSubunitsLnd_sf, overwrite = TRUE)
 usethis::use_data(Areas_Scallop_sf, overwrite = TRUE)
 usethis::use_data(Areas_Shrimp_sf, overwrite = TRUE)
 usethis::use_data(Areas_Snowcrab_sf, overwrite = TRUE)
