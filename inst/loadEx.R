@@ -51,8 +51,8 @@ coastline =  maps::map(database = "world", regions = c("Canada", "USA", "France"
    						fill = TRUE, resolution = 0)
 coast_lores = maptools::map2SpatialPolygons(coastline,
                                               IDs = coastline$names,
-                                              proj4string = sp::CRS("+init=epsg:4326"))
-coast_lores_sf <-    convert2poly(coast_lores, out="sf")
+                                              proj4string = sp::CRS(SRS_string = "EPSG:4326"))
+coast_lores_sf <-    Mar.utils::convert2poly(coast_lores, out="sf")
 
 
 save(Areas_Surfclam_sf,file = "data/Areas_Surfclam_sf.rda")

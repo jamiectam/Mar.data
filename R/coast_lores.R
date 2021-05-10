@@ -6,7 +6,7 @@
 #'   						fill = T, resolution = 0)
 #' coast_lores = maptools::map2SpatialPolygons(coastline,
 #'                                              IDs = coastline$names,
-#'                                              proj4string = sp::CRS("+init=epsg:4326"))
+#'                                              proj4string = sp::CRS(SRS_string="EPSG:4326"))
 #' save(coast_lores,file = "coast_lores.rda")
 #' @docType data
 #' @format  SpatialPolygons object
