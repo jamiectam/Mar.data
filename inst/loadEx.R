@@ -1,9 +1,11 @@
 library(sf)
 #create sf files
 #
-load("C:/git/Maritimes/Mar.data/data-raw/Science/Halibut/SurveyStrata.RData")
-Areas_Halibut_sf <- surveyStrataPolyLL
-   rm(list = c('block_sf','StrataAreas','surveyPoly','surveyPolyLL','surveyStrataPoly','surveyStrataPolyLL'))
+# load("C:/git/Maritimes/Mar.data/data-raw/Science/Halibut/SurveyStrata.RData")
+# Areas_Halibut_sf <- surveyStrataPolyLL
+#    rm(list = c('block_sf','StrataAreas','surveyPoly','surveyPolyLL','surveyStrataPoly','surveyStrataPolyLL'))
+Areas_Halibut_sf <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/Science/Halibut/Areas_Halibut_sf.shp")
+
 #Shapefiles
 NAFOSubunits_sf   <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED.shp")
     NAFOSubunits_sf$OBJECTID<- NAFOSubunits_sf$Shape_Leng<- NAFOSubunits_sf$Shape_Area<-NULL
@@ -28,10 +30,10 @@ Areas_Surfclam_sf <-     Mar.utils::convert2poly("C:/git/Maritimes/Mar.data/data
 LFAs_sf <-    convert2poly("C:/git/Maritimes/Mar.data/data-raw/Science/Lobster/LFAPolys.csv", out = "sf")
     colnames(LFAs_sf)[colnames(LFAs_sf)=="PID"] <- "LFA"
     LFAs_sf$ID <- NULL
-Areas_Halibut_sf <-    convert2poly(Areas_Halibut_sf, out = "sf")
-    colnames(Areas_Halibut_sf)[colnames(Areas_Halibut_sf)=="PID"] <- "Strata"
-    Areas_Halibut_sf$ID <- NULL
-
+# Areas_Halibut_sf <-    convert2poly(Areas_Halibut_sf, out = "sf")
+#     colnames(Areas_Halibut_sf)[colnames(Areas_Halibut_sf)=="PID"] <- "Strata"
+#     Areas_Halibut_sf$ID <- NULL
+#     st_crs(Areas_Halibut_sf) = 4326
 
 # create sp files
 NAFOSubunits      <- rgdal::readOGR("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED.shp")
