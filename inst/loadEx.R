@@ -15,7 +15,9 @@ Areas_Shrimp_sf      <- sf::st_read ("C:/git/Maritimes/Mar.data/data-raw/Science
     Areas_Shrimp_sf$LAT <- Areas_Shrimp_sf$LON <- Areas_Shrimp_sf$trekMin <- Areas_Shrimp_sf$trekMax <- Areas_Shrimp_sf$cnt <- Areas_Shrimp_sf$BOX_ID <- NULL
 Areas_Scallop_sf     <- sf::st_read ("C:/git/Maritimes/Mar.data/data-raw/Science/Scallop/ScallopSFAs.shp")
     Areas_Scallop_sf$OBJECTID<- Areas_Scallop_sf$Shape_Leng<- Areas_Scallop_sf$Shape_Area<-NULL
-Grids_Lobster_sf <-  sf::st_read ("C:/git/Maritimes/Mar.data/data-raw/Science/Lobster/GridsMMM.shp")
+SPAs_Scallop_sf     <- sf::st_read ("C:/git/Maritimes/Mar.data/data-raw/Science/Scallop/ScallopSPAs.shp")
+
+    Grids_Lobster_sf <-  sf::st_read ("C:/git/Maritimes/Mar.data/data-raw/Science/Lobster/GridsMMM.shp")
 #Snowcrab dat files were converted to shapefiles via dat2Shp.R
 Areas_Snowcrab_sf <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/Science/Snowcrab/SCAreas.shp")
     Areas_Snowcrab_sf$OBJECTID <-Areas_Snowcrab_sf$Shape_Leng <- Areas_Snowcrab_sf$Shape_Area <- NULL
@@ -73,6 +75,7 @@ save(NAFOSubunitsLnd,file = "data/NAFOSubunitsLnd.rda")
 save(NAFOSubunitsLnd_sf,file = "data/NAFOSubunitsLnd_sf.rda")
 
 save(Areas_Scallop_sf,file = "data/Areas_Scallop_sf.rda")
+save(SPAs_Scallop_sf,file = "data/SPAs_Scallop_sf.rda")
 save(Areas_Shrimp_sf,file = "data/Areas_Shrimp_sf.rda")
 save(Areas_Snowcrab_sf,file = "data/Areas_Snowcrab_sf.rda")
 save(Areas_Snowcrab_Slope_sf,file = "data/Areas_Snowcrab_Slope_sf.rda")
@@ -91,6 +94,7 @@ usethis::use_data(NAFOSubunits_sf, overwrite = TRUE)
 usethis::use_data(NAFOSubunitsLnd, overwrite = TRUE)
 usethis::use_data(NAFOSubunitsLnd_sf, overwrite = TRUE)
 usethis::use_data(Areas_Scallop_sf, overwrite = TRUE)
+usethis::use_data(SPAs_Scallop_sf, overwrite = TRUE)
 usethis::use_data(Areas_Shrimp_sf, overwrite = TRUE)
 usethis::use_data(Areas_Snowcrab_sf, overwrite = TRUE)
 usethis::use_data(Areas_Snowcrab_Slope_sf, overwrite = TRUE)
