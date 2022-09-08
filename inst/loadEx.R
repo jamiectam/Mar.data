@@ -7,8 +7,13 @@ library(sf)
 Areas_Halibut_sf <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/Science/Halibut/Areas_Halibut_sf.shp")
 
 #Shapefiles
-NAFOSubunits_sf   <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED.shp")
-    NAFOSubunits_sf$OBJECTID<- NAFOSubunits_sf$Shape_Leng<- NAFOSubunits_sf$Shape_Area<-NULL
+# NAFOSubunits_sf   <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED.shp")
+#     NAFOSubunits_sf$OBJECTID<- NAFOSubunits_sf$Shape_Leng<- NAFOSubunits_sf$Shape_Area<-NULL
+NAFOSubunits_sf   <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_KasiaUS2022.shp")
+NAFOSubunits_sf$OBJECTID_1<-NAFOSubunits_sf$OBJECTID<-NAFOSubunits_sf$ORIG_FID<- NAFOSubunits_sf$Shape_Le_1 <-NAFOSubunits_sf$Shape_Leng<- NAFOSubunits_sf$Shape_Area<-NULL
+colnames(NAFOSubunits_sf)[colnames(NAFOSubunits_sf)=="AREA"] <- "AREA_ID"
+save(NAFOSubunits_sf,file = "../../PopulationEcologyDivision/RVSurveyData/data/nafo_sf.rda")
+
 Strata_Mar_sf      <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/Strata/MaritimesRegionEcosystemAssessmentStrata(2014-).shp")
 Strata_Mar_4VSW_sf  <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/Strata/4VsW.shp")
 Areas_Shrimp_sf      <- sf::st_read ("C:/git/Maritimes/Mar.data/data-raw/Science/Shrimp/shrimpBoxesPoly.shp")

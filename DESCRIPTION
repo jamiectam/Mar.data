@@ -5,6 +5,7 @@ Authors@R: c( person("Mike", "McMahon", email="Mike.McMahon@dfo-mpo.gc.ca", role
 Maintainer: Mike McMahon <Mike.McMahon@dfo-mpo.gc.ca>
 Description: This package includes a variety of spatial files, in both sp and sf formats.
 License: MIT + file LICENSE
+Encoding: UTF-8
 Depends:
     R (>= 3.5.0)
 Suggests:
@@ -12,4 +13,4 @@ Suggests:
     sf
 LazyData: true
 URL: https://github.com/Maritimes/Mar.data/
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.0
