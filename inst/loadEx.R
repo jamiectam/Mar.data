@@ -12,7 +12,18 @@ Areas_Halibut_sf <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/Science/Hali
 NAFOSubunits_sf   <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_KasiaUS2022.shp")
 NAFOSubunits_sf$OBJECTID_1<-NAFOSubunits_sf$OBJECTID<-NAFOSubunits_sf$ORIG_FID<- NAFOSubunits_sf$Shape_Le_1 <-NAFOSubunits_sf$Shape_Leng<- NAFOSubunits_sf$Shape_Area<-NULL
 colnames(NAFOSubunits_sf)[colnames(NAFOSubunits_sf)=="AREA"] <- "AREA_ID"
-save(NAFOSubunits_sf,file = "../../PopulationEcologyDivision/RVSurveyData/data/nafo_sf.rda")
+
+# create sp files
+NAFOSubunits      <- rgdal::readOGR("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED.shp")
+NAFOSubunits@data$OBJECTID <- NAFOSubunits@data$Shape_Leng<- NAFOSubunits@data$Shape_Area <- NULL
+
+NAFOSubunitsLnd      <- rgdal::readOGR("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED20210416a.shp")
+NAFOSubunitsLnd@data$OBJECTID_1 <- NAFOSubunitsLnd@data$Shape_Leng<- NAFOSubunitsLnd@data$Shape_Area <- NULL
+colnames(NAFOSubunitsLnd@data)[colnames(NAFOSubunitsLnd@data)=="NAFO_BEST"]<- "NAFO"
+
+NAFOSubunitsLnd_sf   <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED20210416a.shp")
+NAFOSubunitsLnd_sf$OBJECTID<- NAFOSubunitsLnd_sf$Shape_Leng<- NAFOSubunitsLnd_sf$Shape_Area<-NULL
+colnames(NAFOSubunitsLnd_sf)[colnames(NAFOSubunitsLnd_sf)=="NAFO_BEST"]<- "NAFO"
 
 Strata_Mar_sf      <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/Strata/MaritimesRegionEcosystemAssessmentStrata(2014-).shp")
 Strata_Mar_4VSW_sf  <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/Strata/4VsW.shp")
@@ -42,16 +53,7 @@ LFAs_sf <-    convert2poly("C:/git/Maritimes/Mar.data/data-raw/Science/Lobster/L
 #     Areas_Halibut_sf$ID <- NULL
 #     st_crs(Areas_Halibut_sf) = 4326
 
-# create sp files
-NAFOSubunits      <- rgdal::readOGR("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED.shp")
-NAFOSubunits@data$OBJECTID <- NAFOSubunits@data$Shape_Leng<- NAFOSubunits@data$Shape_Area <- NULL
 
-
-NAFOSubunitsLnd      <- rgdal::readOGR("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED20210416a.shp")
-NAFOSubunitsLnd@data$OBJECTID_1 <- NAFOSubunitsLnd@data$Shape_Leng<- NAFOSubunitsLnd@data$Shape_Area <- NULL
-
-NAFOSubunitsLnd_sf   <- sf::st_read("C:/git/Maritimes/Mar.data/data-raw/NAFO/NAFO_BEST_UPDATED20210416a.shp")
-NAFOSubunitsLnd_sf$OBJECTID<- NAFOSubunitsLnd_sf$Shape_Leng<- NAFOSubunitsLnd_sf$Shape_Area<-NULL
 
 
 hex_sf <- sf::st_as_sf(hex)
@@ -73,7 +75,9 @@ save(LFAs_sf,file = "data/LFAs_sf.rda")
 save(Grids_Lobster_sf,file = "data/Grids_Lobster_sf.rda")
 save(Strata_Mar_4VSW_sf,file = "data/Strata_Mar_4VSW_sf.rda")
 save(Strata_Mar_sf,file = "data/Strata_Mar_sf.rda")
+
 save(NAFOSubunits,file = "data/NAFOSubunits.rda")
+# save(NAFOSubunits_sf,file = "data/nafo_sf.rda")
 save(NAFOSubunits_sf,file = "data/NAFOSubunits_sf.rda")
 
 save(NAFOSubunitsLnd,file = "data/NAFOSubunitsLnd.rda")
