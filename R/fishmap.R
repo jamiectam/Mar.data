@@ -1,5 +1,13 @@
-mar_nafo_sf<-NAFOSubunitsLnd_sf %>%
-                filter(NAFO_1 %in% c("4V", "4W", "4X", "5Y"))
+
+library(sf)
+library (here)
+
+#load CoastSF1
+coastsf <- readRDS(here("/data/CoastSF 1.rds"))
+
+
+# mar_nafo_sf<-NAFOSubunitsLnd_sf %>%
+#                 filter(NAFO_1 %in% c("4V", "4W", "4X", "5Y"))
 
 # mar_nafo_sf<-NAFOSubunitsLnd_sf %>%
 #   filter(NAFO_1 %in% c("4V", "4W", "4X", "5Y", "<LAND>"))
@@ -7,29 +15,26 @@ mar_nafo_sf<-NAFOSubunitsLnd_sf %>%
 # nafo_map<-ggplot()+
 #   geom_sf(data=mar_nafo_land_sf)
 
-library(sf)
-
 # Define the bounding box coordinates for Nova Scotia
-min_lon <- -70
-min_lat <- 40
-max_lon <- -50
-max_lat <- 49
-
-# Create the bounding box
-bbox_ns <- st_bbox(c(xmin = min_lon, ymin = min_lat, xmax = max_lon, ymax = max_lat), crs = st_crs("+proj=longlat +datum=WGS84"))
-clipped_coast<-st_crop(coastsf, bbox_ns)
-
-coast_map<-ggplot()+
-  geom_sf(data=clipped_coast)
-
-bbox <- st_bbox(c(xmin = 48, ymin = 35, xmax = 75, ymax = 49), 
-                                crs = st_crs(coast_lores_sf))
-clipped_coast<-st_crop(coast_sf, bbox)
+# min_lon <- -70
+# min_lat <- 40
+# max_lon <- -50
+# max_lat <- 49
+# 
+# # Create the bounding box
+# bbox_ns <- st_bbox(c(xmin = min_lon, ymin = min_lat, xmax = max_lon, ymax = max_lat), crs = st_crs("+proj=longlat +datum=WGS84"))
+# clipped_coast<-st_crop(coastsf, bbox_ns)
+# 
+# coast_map<-ggplot()+
+#   geom_sf(data=clipped_coast)
+# 
+# bbox <- st_bbox(c(xmin = 48, ymin = 35, xmax = 75, ymax = 49), 
+#                                 crs = st_crs(coast_lores_sf))
+# clipped_coast<-st_crop(coast_sf, bbox)
 
 
 
 fishmap<-ggplot()+
-  geom_sf(data=coastsf, colour="black",  fill="light grey")+
   geom_sf(data=Areas_Halibut_sf, color="green", fill="transparent")+
   geom_sf(data=Areas_Snowcrab_sf, color="blue", fill="transparent") +
   geom_sf(data=Areas_Shrimp_sf, color="orange", fill="transparent")+ 
@@ -42,6 +47,6 @@ fishmap<-ggplot()+
   
 ggsave("fishmapboundaries.jpeg", fishmap, width=8, height=10, dpi=500)
   
-  bbox <- st_bbox(c(xmin = , ymin = min_lat, xmax = max_lon, ymax = max_lat), crs = st_crs(my_data))
-  clipped_coast <- st_crop(my_data, bbox)
+  # bbox <- st_bbox(c(xmin = , ymin = min_lat, xmax = max_lon, ymax = max_lat), crs = st_crs(my_data))
+  # clipped_coast <- st_crop(my_data, bbox)
   
