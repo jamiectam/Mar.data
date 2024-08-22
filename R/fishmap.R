@@ -1,11 +1,13 @@
 
 library(sf)
 library (here)
+library(tidyverse)
+library(ggplot2)
 
 #load CoastSF1
-coastsf <- readRDS(here("/data/CoastSF 1.rds"))
+coastsf <- readRDS(here("data/CoastSF 1.rds"))
 
-
+# 
 # mar_nafo_sf<-NAFOSubunitsLnd_sf %>%
 #                 filter(NAFO_1 %in% c("4V", "4W", "4X", "5Y"))
 
